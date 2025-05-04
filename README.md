@@ -1,4 +1,4 @@
-# Remote Development Tutorial
+# Vagrant VMs Setup for Local Development
 
 Demonstrate remote development practices on virtual machines to avoid messing up host machine evironment.
 
