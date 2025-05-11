@@ -1,30 +1,21 @@
-# Vagrant VMs Setup for Local Development
+# Collection of VM automation approaches
 
-Demonstrate remote development practices on virtual machines to avoid messing up host machine evironment.
+Demonstrate remote development with type-2 hypervisor VMs.
 
-Vagrant templates for remote development with virtual machines:
+## Prerequisites
 
-* `k8s-cluster`: example to simulate kubernetes cluster with virtualboxes
-* `mongodb`: example to setup mongodb with docker within virtualbox
-* `localdev`: examples of different localhost development environments (java, python...)
+VScode, VirtualBox
 
-`Vagrantfile` in root folder: setup simple machine with git default to provision other machines
+## Usage
 
-* Implement ansible to provisioning localhost environment in another folder
-* After successful setup virtual machine, copy the setup boilerplate into this repo
-* startup root folder (to use Git) and commit the boilerplate provisioning
+```bash
+# Checkout the necessary branch in a separate folder, i.e.: practice with Vagrant
+mkdir vm-automation-practice && cd vm-automation-practice
+mkdir vagrant && cd vagrant
+git init
+git remote add origin git@github.com:sunshine55/vm-automation-practice.git
+git fetch origin vagrant
+git checkout vagrant
 
-VSCode is only tool need to install on host machine, other works are done via guest machines
-
-```
-# Start
-vagrant up
-
-# Copy info into ssh_config or .ssh/config for VSCode remote development
-vagrant ssh-config
-
-# Given .ssh keys were generated for Github account and put in this root folder (ignored when pushing to Github)
-vagrant ssh
-cp /vagrant/.ssh ~/.ssh
-chmod -R 700 ~/.ssh
+# Then follow the README on the checked out branch
 ```
